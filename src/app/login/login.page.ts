@@ -31,7 +31,7 @@ export class LoginPage implements OnInit {
   }
 
   onSubmit(): void{
-    this.userService.login(this.user).subscribe(
+    this.userService.logIn(this.user).subscribe(
       (response) => {
         this.response(response);
       }
