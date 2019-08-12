@@ -27,6 +27,10 @@ export class UserService {
     this.url = `${l.protocol}//${host}/api/auth/`;
   }
 
+  register(user: User): Observable<User>{
+    return this.http.post<User>(this.url + 'register', user, httpOptions);
+  }
+
   logIn(user: User): Observable<User>{
     return this.http.post<User>(this.url + 'login', user, httpOptions);
   }
@@ -34,4 +38,5 @@ export class UserService {
   logOut(): Observable<User>{
     return this.http.delete<User>(this.url + 'logout');
   }
+
 }
